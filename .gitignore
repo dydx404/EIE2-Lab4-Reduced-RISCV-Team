@@ -1,0 +1,10 @@
+# Simulation outputs
+obj_dir/
+*.o
+*.out
+*.vcd
+*.fst
+*.log
+
+# VSCode settings
+.vscode/
