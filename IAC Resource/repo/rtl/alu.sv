@@ -1,9 +1,13 @@
+// alu.sv
 module alu(
-    input logic aluop1 [31:0],
-    input logic aluop2 [31:0],
-    input logic aluctrl [1:0],
-    output logic aluout [31:0],
-    output logic eq 
+    input  logic [31:0] aluop1,
+    input  logic [31:0] aluop2,
+    input  logic        aluctrl,
+    output logic [31:0] aluout,    
+    output logic        eq
 );
-    
+    assign aluout = aluctrl?(aluop1-aluop2):(aluop1+aluop2);
+
+    assign eq = (aluout == 32'b0);
+
 endmodule
