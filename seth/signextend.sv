@@ -6,7 +6,7 @@ module signextend(
 
     wire [31:0] i_Imm = {{20{instr[31]}}, instr[31:20]}; 
     wire [12:0] b_inter = {instr[31], instr[7], instr[30:25], instr[11:8]};
-    wire [31:0] b_imm = {{18{b_inter[12]}}, b_inter, 1'b0}; 
+    wire [31:0] b_imm = {{19{b_inter[12]}}, b_inter, 1'b0}; 
 
     always @* begin
         case(ImmSrc)

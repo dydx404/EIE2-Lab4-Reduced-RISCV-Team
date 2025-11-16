@@ -9,7 +9,6 @@ module CU (
 );
 
     wire [6:0] opcode = instr[6:0];
-    wire [2:0] funct3 = instr[14:12];
 
     always @* begin
 
