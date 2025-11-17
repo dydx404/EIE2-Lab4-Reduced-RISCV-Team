@@ -1,7 +1,7 @@
 module signextend(
     input  wire [31:0] instr,
     input  wire [1:0]  ImmSrc,
-    output reg  [31:0] Immout
+    output reg  [31:0] ImmOp
 );
 
     wire [31:0] i_Imm = {{20{instr[31]}}, instr[31:20]}; 
@@ -10,9 +10,9 @@ module signextend(
 
     always @* begin
         case(ImmSrc)
-            2'b00: Immout = i_Imm;
-            2'b01: Immout = b_Imm;
-            default: Immout = i_Imm;
+            2'b00: ImmOp = i_Imm;
+            2'b01: ImmOp = b_Imm;
+            default: ImmOp = i_Imm;
         endcase
     end
 

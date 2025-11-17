@@ -21,7 +21,7 @@ module CU (
         //
 
         case (opcode)
-            7'b0010011: begin
+            7'b0010011: begin //addi
                 RegWrite = 1'b1;
                 ALUSrc   = 1'b1;
                 ImmSrc   = 2'b00;
@@ -29,7 +29,7 @@ module CU (
                 ALUCtrl = 3'b000;
             end
 
-            7'b1100011: begin
+            7'b1100011: begin //bne
                 RegWrite = 1'b0;
                 ALUSrc   = 1'b0;
                 ImmSrc   = 2'b01;
