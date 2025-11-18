@@ -5,12 +5,15 @@ module instruction (
     parameter MEM = 256;
     reg [31:0] rom [0:MEM-1];
 
-    // Load instructions from external hex file
+    // Load the program into ROM
     initial begin
         $readmemh("imem.hex", rom);
     end
 
-    wire [31:0] word_index = pc[31:2];
+    // pc[1:0] are always 00 because PC increments by 4
+    // Use pc[9:2] to select from 256-word ROM
+    wire [7:0] word_index = pc[9:2];
+
     assign instr = rom[word_index];
 
 endmodule

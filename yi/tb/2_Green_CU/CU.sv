@@ -4,7 +4,8 @@ module CU (
     output reg         RegWrite,
     output reg         ALUSrc,
     output reg  [1:0]  ImmSrc,
-    output reg  [2:0]  ALUCtrl,  
+    output logic ALUCtrl,
+
     output reg         PCSrc
 );
 
