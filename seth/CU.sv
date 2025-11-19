@@ -51,7 +51,6 @@ module CU (
                 RegWrite = 1'b1;
                 ALUSrc   = 1'b1;
                 ImmSrc   = 2'b00;
-                //since we're assuming we're just doing addi for now
                 ALUCtrl = 1'b0;
                 PCSrc = 1'b0;
                 MemRead = 1;
